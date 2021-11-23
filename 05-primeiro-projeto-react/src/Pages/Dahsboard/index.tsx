@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dahsboard: React.FC = function () {
+const Dahsboard: React.FC = function Dahsboard() {
   return <h1>Dashboard</h1>;
 };
 
