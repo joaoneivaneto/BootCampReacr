@@ -48,6 +48,7 @@ const Input: React.FC<InputProps> = function ({ name, icon: Icon, ...rest }) {
         ref={inputRef}
         {...rest}
       />
+      {error}
     </Container>
   );
 };
