@@ -1,6 +1,5 @@
 import React from 'react';
 import GlobalStyle from './styles/global';
-// eslint-disable-next-line no-unused-vars
 import Signin from './pages/signin';
 // eslint-disable-next-line no-unused-vars
 import SignUp from './pages/signUp';
@@ -8,7 +7,7 @@ import SignUp from './pages/signUp';
 const App: React.FC = function () {
   return (
     <>
-      <SignUp />
+      <Signin />
       <GlobalStyle />
     </>
   );

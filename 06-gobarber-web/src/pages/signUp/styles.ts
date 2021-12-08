@@ -15,8 +15,10 @@ export const Content = styled.div`
   justify-content: center;
 
   width: 100%;
-  max-width: 700px;
-
+  max-width: 100px;
+  img {
+    margin-top: 100px;
+  }
   form {
     margin: 80px 0;
     width: 340px;
