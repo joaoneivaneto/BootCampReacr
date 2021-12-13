@@ -1,5 +1,4 @@
-import { userInfo } from 'os';
-import React, { createContext, useCallback, useState } from 'react';
+import React, { createContext, useCallback, useContext, useState } from 'react';
 
 import api from '../services/api';
 
@@ -16,11 +15,9 @@ interface AuthContextData {
   signin(credentials: SigninCredentials): Promise<void>;
 }
 
-export const AuthContext = createContext<AuthContextData>(
-  {} as AuthContextData,
-);
+const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
-export const AuthProvider: React.FC = function ({ children }) {
+const AuthProvider: React.FC = function ({ children }) {
   const [data, setData] = useState<AuthState>(() => {
     const token = localStorage.getItem('@GoBarber:token');
     const user = localStorage.getItem('@GoBarber:user');
@@ -49,3 +46,12 @@ export const AuthProvider: React.FC = function ({ children }) {
     </AuthContext.Provider>
   );
 };
+function useAuth(): AuthContextData {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('use Auth must be used within an authProvider');
+  }
+  return context;
+}
+
+export { AuthProvider, useAuth };
