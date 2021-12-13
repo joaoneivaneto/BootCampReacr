@@ -4,7 +4,7 @@ import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 import * as Yup from 'yup';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
-import { useAuth } from '../../context/authContext';
+import { useAuth } from '../../hooks/authContext';
 import logoImg from '../../assets/logo.svg';
 
 import Input from '../../components/input';

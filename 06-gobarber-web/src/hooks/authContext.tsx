@@ -13,6 +13,7 @@ interface SigninCredentials {
 interface AuthContextData {
   user: object;
   signin(credentials: SigninCredentials): Promise<void>;
+  signInOut(): void;
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
@@ -39,9 +40,15 @@ const AuthProvider: React.FC = function ({ children }) {
     localStorage.setItem('@GoBarber:user', JSON.stringify(user));
     setData({ token, user });
   }, []);
+
+  const signInOut = useCallback(() => {
+    localStorage.removeItem('@GoBarber:token');
+    localStorage.removeItem('@GoBarber:user');
+  }, []);
+
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <AuthContext.Provider value={{ user: data.user, signin }}>
+    <AuthContext.Provider value={{ user: data.user, signin, signInOut }}>
       {children}
     </AuthContext.Provider>
   );
