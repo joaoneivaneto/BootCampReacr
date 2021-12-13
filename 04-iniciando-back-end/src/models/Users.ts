@@ -24,10 +24,10 @@ class User {
   avatar: string;
 
   @CreateDateColumn()
-  created_at: string;
+  create_at: Date;
 
   @UpdateDateColumn()
-  updated_at: string;
+  update_at: Date;
 }
 
 export default User;

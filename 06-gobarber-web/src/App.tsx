@@ -4,10 +4,14 @@ import Signin from './pages/signin';
 // eslint-disable-next-line no-unused-vars
 import SignUp from './pages/signUp';
 
+import { AuthProvider } from './context/authContext';
+
 const App: React.FC = function () {
   return (
     <>
-      <Signin />
+      <AuthProvider>
+        <Signin />
+      </AuthProvider>
       <GlobalStyle />
     </>
   );
