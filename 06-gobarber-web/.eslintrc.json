@@ -23,6 +23,8 @@
     ],
     "rules": {
       "react/jsx-no-constructed-context-values":"warn",
+      "implicit-arrow-linebreak":"off",
+      "operator-linebreak":"off",
       "no-unused-vars":"warn",
       "object-curly-newline":"off",
       "prettier/prettier":"error",
