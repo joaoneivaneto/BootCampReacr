@@ -6,15 +6,13 @@ import SignUp from './pages/signUp';
 
 import AppProvider from './hooks';
 
-import ToastContainer from './components/ToastContatainer';
-
 const App: React.FC = function () {
   return (
     <>
       <AppProvider>
         <Signin />
       </AppProvider>
-      <ToastContainer />
+
       <GlobalStyle />
     </>
   );
